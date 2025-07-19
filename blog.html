@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="assets/css/matrix.css" />
 </head>
 <body>
+  <!-- ✅ Matrix Background Canvas -->
+  <canvas id="matrix"></canvas>
+
+  <!-- ✅ Navigation -->
   <header class="navbar">
     <div class="logo"><a href="index.html">ven.finance</a></div>
     <nav class="nav-links">
@@ -18,18 +22,24 @@
     </nav>
   </header>
 
+  <!-- ✅ Main Content Area -->
   <main class="highlight container">
     <h1 class="glitch">blog = loading()</h1>
-    <div id="blog-posts">loading...</div>
+    <div id="blog-posts" class="markdown-block">loading...</div>
   </main>
 
+  <!-- ✅ Footer -->
   <footer>ven.finance — 2025</footer>
 
+  <!-- ✅ External Blog Parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="assets/js/matrix.js"></script>
+
+  <!-- ✅ Blog Post Markdown Loader -->
   <script>
     async function loadPosts() {
       const folder = 'assets/blog-posts/';
-      const posts = ['post-1.md']; // you can add more later
+      const posts = ['post-1.md']; // update with real files later
       const out = document.getElementById('blog-posts');
       out.innerHTML = '';
       for (let file of posts) {
@@ -42,9 +52,6 @@
       }
     }
     loadPosts();
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
   </script>
 </body>
 </html>
