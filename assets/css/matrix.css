@@ -1,4 +1,3 @@
-/* Base Styling */
 body {
   background: black;
   color: #00ff00;
@@ -14,110 +13,132 @@ canvas#matrix {
   z-index: -1;
 }
 
-/* Nav Bar — fixed horizontal layout */
+/* Navigation Bar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.9);
   border-bottom: 1px solid #00ff00;
-  background: rgba(0,0,0,0.85);
-  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
 }
 
 .logo a {
   color: #00ff00;
-  font-size: 1.6rem;
-  text-decoration: none;
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: lowercase;
+  text-decoration: none;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: flex-end;
-}
-
-.nav-links a {
+.navbar nav a {
+  margin-left: 1.2rem;
   color: #00ff00;
   text-decoration: none;
-  font-weight: 500;
   position: relative;
+  font-weight: 500;
 }
 
-.nav-links a::after {
-  content: "";
+.navbar nav a::after {
+  content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
   width: 0%;
   height: 1px;
-  background: #0f0;
-  transition: width 0.3s ease;
+  bottom: -2px;
+  left: 0;
+  background-color: #00ff00;
+  transition: width 0.3s ease-in-out;
 }
 
-.nav-links a:hover {
-  color: white;
-}
-
-.nav-links a:hover::after {
+.navbar nav a:hover::after {
   width: 100%;
 }
 
 .divider {
+  margin: 0 0.5rem;
   color: #00ff00;
-  opacity: 0.5;
-  font-size: 1.1rem;
-  user-select: none;
+  opacity: 0.4;
 }
 
-/* Content */
-.highlight {
-  padding: 3rem 2rem;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-/* Glitch and Typewriter */
-.glitch {
-  text-shadow: 0 0 4px #0f0, 0 0 8px #0f0;
-  animation: flicker 1.5s infinite;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-@keyframes flicker {
-  0% { opacity: 1; }
-  40% { opacity: 0.6; }
-  70% { opacity: 1; }
-  100% { opacity: 0.8; }
-}
-
+/* Typewriter effect */
 .typewriter {
   overflow: hidden;
   white-space: nowrap;
-  border-right: .15em solid #0f0;
-  animation: 
-    typing 3s steps(30, end),
-    blink-caret .75s step-end infinite;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  border-right: 0.15em solid #00ff00;
+  animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+  font-size: 1.8rem;
+  width: fit-content;
+  margin: auto;
 }
 
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
+
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-color: #0f0; }
+  50% { border-color: #00ff00; }
+}
+
+/* Section Formatting */
+.highlight {
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Cards Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #00ff00;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h2, .card h3 {
+  color: #00ff00;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.card p {
+  color: #a8f5a8;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card a {
+  color: #00ff00;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.card.disabled {
+  opacity: 0.5;
+}
+
+.card.disabled button {
+  background: #444;
+  color: #999;
+  border: 1px solid #666;
+  cursor: not-allowed;
 }
 
 /* Footer */
@@ -128,26 +149,35 @@ footer {
   font-size: 0.85rem;
 }
 
-/* Mobile Tweaks */
-@media screen and (max-width: 768px) {
-  .logo a {
-    font-size: 1.3rem;
-  }
+/* Resume Download Button */
+.resume-btn {
+  padding: 0.35em 0.7em;
+  background: #00ff00;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  transition: background 0.3s ease;
+}
 
-  .glitch, .typewriter {
-    font-size: 1.4rem;
-  }
+.resume-btn:hover {
+  background: #ffffff;
+  color: black;
+}
 
-  .highlight {
-    padding: 2rem 1rem;
-  }
+/* Optional glitchy headers */
+.glitch {
+  font-size: 1.6rem;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+  animation: glitch 2s infinite;
+}
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-links a {
-    font-size: 0.95rem;
-  }
+@keyframes glitch {
+  0% { transform: skew(0.5deg); }
+  20% { transform: skew(-0.5deg); }
+  40% { transform: skew(0.8deg); }
+  60% { transform: skew(-0.8deg); }
+  80% { transform: skew(0.2deg); }
+  100% { transform: skew(0); }
 }
