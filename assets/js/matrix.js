@@ -25,4 +25,5 @@ function draw() {
     drops[i]++;
   });
 }
+
 setInterval(draw, 40);
