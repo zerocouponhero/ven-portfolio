@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – ven.finance</title>
+  <link rel="stylesheet" href="assets/css/matrix.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="index.html">ven.finance</a></div>
+    <div class="menu-toggle">☰</div>
+    <nav class="nav-links">
+      <a href="models.html">models</a><span class="divider">|</span>
+      <a href="stock-pitches.html">pitches</a><span class="divider">|</span>
+      <a href="blog.html">blog</a><span class="divider">|</span>
+      <a href="about.html">about</a><span class="divider">|</span>
+      <a href="assets/resume/Ven-Resume.pdf" download>[↓ resume]</a>
+    </nav>
+  </header>
+
+  <main class="highlight container">
+    <h1 class="glitch">blog = loading()</h1>
+    <div id="blog-posts">loading...</div>
+  </main>
+
+  <footer>ven.finance — 2025</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    async function loadPosts() {
+      const folder = 'assets/blog-posts/';
+      const posts = ['post-1.md']; // you can add more later
+      const out = document.getElementById('blog-posts');
+      out.innerHTML = '';
+      for (let file of posts) {
+        const res = await fetch(folder + file);
+        const text = await res.text();
+        const div = document.createElement('div');
+        div.innerHTML = marked.parse(text);
+        div.style.margin = '2rem 0';
+        out.appendChild(div);
+      }
+    }
+    loadPosts();
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
