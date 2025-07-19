@@ -17,19 +17,20 @@ canvas#matrix {
 /* Nav Bar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   border-bottom: 1px solid #00ff00;
   background: rgba(0,0,0,0.85);
 }
 
 .logo a {
   color: #00ff00;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   text-decoration: none;
   font-weight: bold;
   text-transform: lowercase;
+  margin-bottom: 0.5rem;
 }
 
 /* Nav Links + Dividers */
@@ -38,6 +39,8 @@ canvas#matrix {
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 .navbar nav a {
@@ -89,4 +92,24 @@ footer {
   padding: 1.5rem;
   border-top: 1px solid #00ff00;
   font-size: 0.85rem;
+}
+
+/* 🪄 Mobile & Tablet Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .logo a {
+    font-size: 1.3rem;
+  }
+
+  .glitch {
+    font-size: 1.4rem;
+  }
+
+  .highlight {
+    padding: 2rem 1rem;
+  }
+
+  .navbar nav {
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
 }
