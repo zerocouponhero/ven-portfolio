@@ -3,55 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog – ven.finance</title>
+  <title>About | ven.finance</title>
   <link rel="stylesheet" href="assets/css/matrix.css" />
 </head>
 <body>
-  <!-- ✅ Matrix Background Canvas -->
   <canvas id="matrix"></canvas>
-
-  <!-- ✅ Navigation -->
+  
   <header class="navbar">
     <div class="logo"><a href="index.html">ven.finance</a></div>
-    <nav class="nav-links">
+    <nav>
       <a href="models.html">models</a><span class="divider">|</span>
       <a href="stock-pitches.html">pitches</a><span class="divider">|</span>
       <a href="blog.html">blog</a><span class="divider">|</span>
       <a href="about.html">about</a><span class="divider">|</span>
-      <a href="assets/resume/Ven-Resume.pdf" download>[↓ resume]</a>
+      <a href="assets/resume/Ven-Resume.pdf" class="resume-btn" download>[↓ resume]</a>
     </nav>
   </header>
-
-  <!-- ✅ Main Content Area -->
-  <main class="highlight container">
-    <h1 class="glitch">blog = loading()</h1>
-    <div id="blog-posts" class="markdown-block">loading...</div>
+  
+  <main class="highlight">
+    <h1 class="glitch">about = ven()</h1>
+    <p>I’m Ven — a finance nerd who thrives at the intersection of data, valuation, and narrative. I build end-to-end models (DCF, LBO, Comps), pitch asymmetric stock ideas, and break down macro trends in my blog. My tools are Excel tabs, Pine Script, and a stubborn curiosity for markets.</p>
+    <p>I’ve worked on both buy-side simulations and self-driven model builds — always seeking to understand what drives value and what markets get wrong.</p>
+    <p>As I develop this site, I’m constantly refining my process and adding new models, pitches, and written insights. Connect if you're keen on valuation, macro strategy, or investment logic.</p>
   </main>
-
-  <!-- ✅ Footer -->
+  
   <footer>ven.finance — 2025</footer>
-
-  <!-- ✅ External Blog Parser -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="assets/js/matrix.js"></script>
-
-  <!-- ✅ Blog Post Markdown Loader -->
-  <script>
-    async function loadPosts() {
-      const folder = 'assets/blog-posts/';
-      const posts = ['post-1.md']; // update with real files later
-      const out = document.getElementById('blog-posts');
-      out.innerHTML = '';
-      for (let file of posts) {
-        const res = await fetch(folder + file);
-        const text = await res.text();
-        const div = document.createElement('div');
-        div.innerHTML = marked.parse(text);
-        div.style.margin = '2rem 0';
-        out.appendChild(div);
-      }
-    }
-    loadPosts();
-  </script>
 </body>
 </html>
