@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Blog | ven.finance</title>
   <link rel="stylesheet" href="assets/css/matrix.css" />
 </head>
 <body>
   <canvas id="matrix"></canvas>
-
   <header class="navbar">
     <div class="logo"><a href="index.html">ven.finance</a></div>
     <nav>
@@ -22,29 +21,15 @@
 
   <main class="highlight">
     <h1 class="glitch">blog = loading()</h1>
-    <div id="blog-posts" class="card-grid"></div>
+    <div class="card-grid">
+      <div class="card disabled">
+        <h3>Blog coming soon</h3>
+        <p>Market narratives, macro themes, and original thoughts will stream here soon...</p>
+      </div>
+    </div>
   </main>
-  
-  <footer>ven.finance — 2025</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <footer>ven.finance — 2025</footer>
   <script src="assets/js/matrix.js"></script>
-  <script>
-    async function loadPosts() {
-      const folder = 'assets/blog-posts/';
-      const posts = ['post-1.md']; // Add more filenames here
-      const out = document.getElementById('blog-posts');
-      out.innerHTML = '';
-      for (let file of posts) {
-        const res = await fetch(folder + file);
-        const text = await res.text();
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = marked.parse(text);
-        out.appendChild(card);
-      }
-    }
-    loadPosts();
-  </script>
 </body>
 </html>
