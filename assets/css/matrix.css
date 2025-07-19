@@ -1,1 +1,55 @@
+body {
+  background: black;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  overflow-x: hidden;
+}
 
+canvas#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #00ff00;
+  background: rgba(0,0,0,0.85);
+}
+
+.logo a {
+  color: #00ff00;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.navbar nav a {
+  margin-left: 1.5rem;
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: white;
+}
+
+.highlight {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #00ff00;
+  font-size: 0.85rem;
+}
