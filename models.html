@@ -9,26 +9,27 @@
 <body>
   <header class="navbar">
     <div class="logo"><a href="index.html">ven.finance</a></div>
+    <div class="menu-toggle">☰</div>
     <nav class="nav-links">
-      <a href="models.html">models</a>
-      <span class="divider">|</span>
-      <a href="stock-pitches.html">pitches</a>
-      <span class="divider">|</span>
-      <a href="blog.html">blog</a>
-      <span class="divider">|</span>
-      <a href="about.html">about</a>
-      <span class="divider">|</span>
+      <a href="models.html">models</a><span class="divider">|</span>
+      <a href="stock-pitches.html">pitches</a><span class="divider">|</span>
+      <a href="blog.html">blog</a><span class="divider">|</span>
+      <a href="about.html">about</a><span class="divider">|</span>
       <a href="assets/resume/Ven-Resume.pdf" download>[↓ resume]</a>
     </nav>
   </header>
 
   <main class="highlight container">
     <h1 class="glitch">models = coming_soon()</h1>
-    <p>Financial models will appear here. Check back shortly for Excel + PDF downloads.</p>
+    <p>Financial models in Excel & PDF will appear here.</p>
   </main>
 
-  <footer>
-    ven.finance — 2025
-  </footer>
+  <footer>ven.finance — 2025</footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
