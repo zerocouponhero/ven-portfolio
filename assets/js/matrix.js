@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
-const letters = "アァイィウエカキサシタチナニハマヤラワガザダバパ0123456789";
+const letters = "アアイイウエオカサタナハマヤラワガザダバパ0123456789";
 const fontSize = 14;
 const columns = canvas.width / fontSize;
 const drops = new Array(Math.floor(columns)).fill(1);
@@ -25,5 +25,4 @@ function draw() {
     drops[i]++;
   });
 }
-
 setInterval(draw, 40);
