@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="ven.finance – financial models, pitches, blog & resume in Matrix style.">
+  <meta name="description" content="ven.finance – financial models, stock pitches, blogs, resume.">
   <title>ven.finance</title>
   <link rel="stylesheet" href="assets/css/matrix.css" />
 </head>
@@ -12,28 +12,28 @@
 
   <header class="navbar">
     <div class="logo"><a href="index.html">ven.finance</a></div>
+    <div class="menu-toggle">☰</div>
     <nav class="nav-links">
-      <a href="models.html">models</a>
-      <span class="divider">|</span>
-      <a href="stock-pitches.html">pitches</a>
-      <span class="divider">|</span>
-      <a href="blog.html">blog</a>
-      <span class="divider">|</span>
-      <a href="about.html">about</a>
-      <span class="divider">|</span>
+      <a href="models.html">models</a><span class="divider">|</span>
+      <a href="stock-pitches.html">pitches</a><span class="divider">|</span>
+      <a href="blog.html">blog</a><span class="divider">|</span>
+      <a href="about.html">about</a><span class="divider">|</span>
       <a href="assets/resume/Ven-Resume.pdf" download>[↓ resume]</a>
     </nav>
   </header>
 
   <main class="highlight container">
-    <h1 class="glitch">ven.finance = access_granted</h1>
-    <p>This is Ven's financial command center: models, pitches, blogs & more.</p>
+    <h1 class="typewriter">ven.finance = access_granted</h1>
+    <p>welcome to my digital finance terminal</p>
   </main>
 
-  <footer>
-    ven.finance — 2025
-  </footer>
+  <footer>ven.finance — 2025</footer>
 
   <script src="assets/js/matrix.js"></script>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
