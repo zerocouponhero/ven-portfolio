@@ -14,14 +14,15 @@ canvas#matrix {
   z-index: -1;
 }
 
-/* Nav Bar */
+/* Nav Bar — left-right layout */
 .navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #00ff00;
   background: rgba(0,0,0,0.85);
+  flex-wrap: wrap;
 }
 
 .logo a {
@@ -30,27 +31,41 @@ canvas#matrix {
   text-decoration: none;
   font-weight: bold;
   text-transform: lowercase;
-  margin-bottom: 0.5rem;
 }
 
-/* Nav Links + Dividers */
-.navbar nav {
+/* Nav Links */
+.nav-links {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
+  gap: 0.75rem;
+  justify-content: flex-end;
 }
 
-.navbar nav a {
+.nav-links a {
   color: #00ff00;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
 }
 
-.navbar nav a:hover {
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: #00ff00;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
   color: white;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .divider {
@@ -60,7 +75,7 @@ canvas#matrix {
   user-select: none;
 }
 
-/* Content Container */
+/* Content */
 .highlight {
   padding: 3rem 2rem;
 }
@@ -94,7 +109,7 @@ footer {
   font-size: 0.85rem;
 }
 
-/* 🪄 Mobile & Tablet Responsive Tweaks */
+/* Mobile Responsive */
 @media screen and (max-width: 768px) {
   .logo a {
     font-size: 1.3rem;
@@ -108,8 +123,11 @@ footer {
     padding: 2rem 1rem;
   }
 
-  .navbar nav {
-    gap: 0.5rem;
+  .nav-links {
+    justify-content: center;
+  }
+
+  .nav-links a {
     font-size: 0.95rem;
   }
 }
