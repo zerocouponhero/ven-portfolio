@@ -53,3 +53,11 @@ footer {
   border-top: 1px solid #00ff00;
   font-size: 0.85rem;
 }
+
+.divider {
+  margin: 0 1rem;
+  color: #00ff00;
+  font-weight: lighter;
+  opacity: 0.5;
+  user-select: none;
+}
