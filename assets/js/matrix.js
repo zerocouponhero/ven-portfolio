@@ -30,3 +30,20 @@ function draw() {
 }
 
 setInterval(draw, 50);
+
+let percentage = 0;
+const loadingText = document.getElementById('loading-percentage');
+
+function updateLoader() {
+  percentage++;
+  loadingText.textContent = `${percentage}%`;
+  if (percentage < 100) {
+    setTimeout(updateLoader, 10); // Fast load
+  } else {
+    setTimeout(() => {
+      document.getElementById('loading-screen').style.display = 'none';
+    }, 200);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', updateLoader);
