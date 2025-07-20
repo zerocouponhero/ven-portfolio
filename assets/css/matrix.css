@@ -1,95 +1,118 @@
-/* matrix.css */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
+/* === matrix.css === */
+
+/* Reset & base */
+html, body {
+  margin: 0;
+  padding: 0;
   background: black;
-  color: #00FF00;
+  color: #00ff00;
   font-family: 'Courier New', monospace;
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
+
+/* Matrix Rain */
 #matrix-canvas {
-  position: fixed; top:0; left:0;
-  width: 100%; height: 100%;
+  position: fixed;
   z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 20px 30px;
   background: rgba(0,0,0,0.85);
-  border-bottom: 1px solid #00FF00;
-  flex-wrap: wrap;
+  border-bottom: 1px solid #00ff00;
 }
-header .logo a {
-  color: #00FF00; text-decoration: none;
-  font-size: 1.3rem; font-weight: bold;
-  text-transform: lowercase;
-}
-header nav a {
-  margin-left: 1rem;
-  color: #00FF00; text-decoration: none;
-  position: relative;
-}
-header nav a:hover::after {
-  content: '';
-  position: absolute; bottom: -3px; left: 0;
-  width: 100%; height: 2px;
-  background: #00FF00;
-}
-main {
-  flex: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem 1rem;
-}
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.card, .content-container {
-  background: rgba(0,0,0,0.7);
-  border: 1px solid #00FF00;
-  padding: 1.5rem;
-  color: #00FF00;
-}
-.card {
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-.card h2 { font-size: 1.5rem; }
-.card p { font-size: 0.95rem; flex: 1; text-align: center; }
-.card a {
-  color: #00FF00;
-  text-decoration: none;
+header .logo {
+  font-size: 1.7rem;
   font-weight: bold;
 }
-.card a:hover { text-decoration: underline; }
-.content-container {
-  margin: auto;
-  line-height: 1.5;
+header nav a {
+  margin-left: 20px;
+  color: #00ff00;
+  text-decoration: none;
   font-size: 1rem;
+  transition: text-shadow 0.3s;
 }
+header nav a:hover {
+  text-shadow: 0 0 6px #00ff00;
+}
+
+/* Glowing main heading */
+h1.glow {
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 40px 20px;
+  color: #00ff00;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 8px #00ff00; }
+  to { text-shadow: 0 0 16px #00ff00, 0 0 24px #00ff00; }
+}
+
+/* Section container */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+/* Cards */
+.card {
+  border: 2px solid #00ff00;
+  padding: 24px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px #00ff00;
+}
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #00ff00;
+}
+.card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.card a {
+  display: inline-block;
+  padding: 8px 18px;
+  background: #00ff00;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.card a:hover {
+  background: #55ff55;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
-  border-top: 1px solid #00FF00;
-  font-size: 0.85rem;
+  margin: 40px 0 20px;
+  font-size: 0.9rem;
 }
-@media (max-width: 768px) {
-  header nav {
-    width: 100%;
-    margin-top: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .card { width: 90%; margin-bottom: 1rem; }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header nav a { margin-left: 12px; font-size: 0.9rem; }
+  h1.glow { font-size: 2rem; }
+  .card h2 { font-size: 1.3rem; }
 }
