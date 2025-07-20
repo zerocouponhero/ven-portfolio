@@ -7,18 +7,10 @@
   <link rel="stylesheet" href="assets/matrix.css" />
 </head>
 <body>
-
-  <!-- Matrix Boot Loader (shown on each load) -->
-  <div id="loading-screen">
-    <div class="loading-text">
-      booting ven.finance... <span id="loading-percentage">0%</span>
-    </div>
-  </div>
-
-  <!-- Matrix Rain Background -->
+  <!-- Matrix Rain -->
   <canvas id="matrix"></canvas>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">ven.finance</div>
     <ul class="nav-links">
@@ -30,10 +22,8 @@
     </ul>
   </nav>
 
-  <!-- Main Title -->
   <h1 class="tagline">ven.finance = access_granted</h1>
 
-  <!-- Section Cards -->
   <main class="card-container">
     <a href="models.html" class="card">
       <div class="icon">🧮</div>
@@ -67,30 +57,10 @@
     </a>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>ven.finance — 2025</p>
   </footer>
 
-  <!-- Matrix Rain & Loader Scripts -->
   <script src="assets/matrix.js"></script>
-  <script>
-    // Loader script for every load
-    const pct = document.getElementById('loading-percentage');
-    const loader = document.getElementById('loading-screen');
-    let count = 0;
-
-    function step() {
-      count++;
-      pct.textContent = count + '%';
-      if (count < 100) {
-        setTimeout(step, 30);
-      } else {
-        loader.style.display = 'none';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', step);
-  </script>
 </body>
 </html>
