@@ -1,101 +1,85 @@
-/* Retro 90s banker terminal theme */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --bg: #0a0a0d;
-  --fg: #33ff33;
-  --accent: #00ccff;
-  --shadow: rgba(51,255,51,0.4);
+  --bg: #F5F0E6;
+  --panel: #FFFFFF;
+  --text: #333333;
+  --accent: #0077CC;
+  --button-bg: #0077CC;
+  --button-hover: #005FA3;
 }
 
 * {
-  margin:0; padding:0;
-  box-sizing:border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background: var(--bg);
-  color: var(--fg);
-  font-family:'VT323', monospace;
-  font-size:1.2rem;
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
-  cursor: url('data:image/svg+xml,\
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">\
-<path d="M2,2 L2,30 L15,18 L30,19 L20,10Z" fill="%2333ff33"/></svg>') 16 0, auto;
+  font-family: 'Press Start 2P', monospace;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
-  padding:1rem;
-  display:flex; gap:2rem;
+  background: var(--panel);
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
 nav a {
   color: var(--accent);
-  text-decoration:none;
-  transition:.3s;
+  text-decoration: none;
+  font-size: .9rem;
+  transition: color .2s;
 }
 
 nav a:hover {
-  color: var(--fg);
-  text-shadow:0 0 8px var(--shadow);
+  color: var(--button-bg);
 }
 
 main {
-  flex:1;
-  padding:2rem;
+  flex: 1;
+  padding: 2rem;
 }
 
 h1 {
-  font-size:2.5rem;
-  position:relative;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes blink {
-  0%,50%,100%{ opacity:1; }
-  25%,75%{ opacity:0; }
-}
-
-.cursor {
-  display:inline-block;
-  width:1ch;
-  background:var(--fg);
-  margin-left:2px;
-  animation:blink 1s steps(1) infinite;
-}
-
-.section-box {
-  border:1px solid var(--fg);
-  padding:1.5rem;
-  margin:1rem 0;
-  transition:.3s;
-}
-
-.section-box:hover {
-  background:rgba(51,255,51,0.1);
-  box-shadow:0 0 10px var(--shadow);
+.panel {
+  background: var(--panel);
+  padding: 2rem;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
 button.download-btn {
-  background:var(--accent);
-  color:var(--bg);
-  border:none;
-  padding:.6rem 1.2rem;
-  font-family:'VT323', monospace;
-  font-size:1rem;
-  cursor:pointer;
-  transition:.3s;
+  margin-top: 1rem;
+  background: var(--button-bg);
+  color: #fff;
+  border: none;
+  padding: .8rem 1.6rem;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: background .2s;
 }
 
 button.download-btn:hover {
-  background:var(--fg);
-  box-shadow:0 0 8px var(--shadow);
+  background: var(--button-hover);
 }
 
 footer {
-  text-align:center;
-  padding:1rem;
-  font-size:.9rem;
-  opacity:.6;
+  text-align: center;
+  padding: 1rem;
+  font-size: .8rem;
+  background: var(--panel);
 }
