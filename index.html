@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ven.finance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | ven.finance</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -14,14 +15,27 @@
         <a href="models.html">models</a>
         <a href="stock-pitches.html">pitches</a>
         <a href="blog.html">blog</a>
-        <a href="assets/resume/Ven-Resume.pdf" target="_blank">resume</a>
+        <a href="assets/resume/Ven-Resume.pdf" download>📎 resume</a>
       </div>
     </nav>
 
-    <h1>Welcome.</h1>
-    <p>This is Ven's digital command center — exploring corporate finance, valuation models, stock theses & market insights.</p>
+    <h1># Welcome</h1>
+    <div class="section">
+      <p>This is Ven's digital finance portfolio: valuation models, stock pitches, and market insights.</p>
+    </div>
+
+    <!-- Terminal command input -->
+    <div class="terminal-container">
+      <pre id="terminal-output"></pre>
+      <div class="terminal-input">
+        <span class="prompt">ven@finance:~$</span>
+        <input type="text" id="terminal-cmd" autocomplete="off" autofocus />
+      </div>
+    </div>
 
     <footer>ven.finance — 2025</footer>
   </div>
+
+  <script src="assets/js/terminal.js"></script>
 </body>
 </html>
