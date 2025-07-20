@@ -4,66 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ven.finance</title>
-  <link rel="stylesheet" href="assets/css/matrix.css" />
+  <link rel="stylesheet" href="assets/matrix.css" />
 </head>
 <body>
+
+  <!-- Matrix Boot Loader (shown on each load) -->
+  <div id="loading-screen">
+    <div class="loading-text">
+      booting ven.finance... <span id="loading-percentage">0%</span>
+    </div>
+  </div>
+
+  <!-- Matrix Rain Background -->
   <canvas id="matrix"></canvas>
 
-  <header class="navbar">
-    <div class="logo"><a href="index.html">ven.finance</a></div>
-    <nav>
-      <a href="models.html">models</a><span class="divider">|</span>
-      <a href="stock-pitches.html">pitches</a><span class="divider">|</span>
-      <a href="blog.html">blog</a><span class="divider">|</span>
-      <a href="about.html">about</a><span class="divider">|</span>
-      <a href="assets/resume/Ven-Resume.pdf" download>[↓ resume]</a>
-    </nav>
-  </header>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">ven.finance</div>
+    <ul class="nav-links">
+      <li><a href="models.html">models</a></li>
+      <li><a href="stock-pitches.html">pitches</a></li>
+      <li><a href="blog.html">blog</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a class="resume-btn" href="assets/resume.pdf" target="_blank">[.resume]</a></li>
+    </ul>
+  </nav>
 
-  <main class="highlight">
-    <h1>ven.finance = access_granted</h1>
+  <!-- Main Title -->
+  <h1 class="tagline">ven.finance = access_granted</h1>
 
-    <div class="card-grid">
-
-      <div class="card">
-        <h3><img src="https://img.icons8.com/emoji/20/00ff00/bar-chart-emoji.png"/> <a href="models.html">Models</a></h3>
-        <p>Valuation models—from DCF to LBO—built in-house.</p>
-      </div>
-
-      <div class="card">
-        <h3><img src="https://img.icons8.com/emoji/20/00ff00/chart-increasing-emoji.png"/> <a href="stock-pitches.html">Pitches</a></h3>
-        <p>Data-driven stock pitches with asymmetric upside.</p>
-      </div>
-
-      <div class="card">
-        <h3><img src="https://img.icons8.com/ios-filled/20/00ff00/blog.png"/> <a href="blog.html">Blog</a></h3>
-        <p>Macro, market logic, and structural commentary.</p>
-      </div>
-
-      <div class="card">
-        <h3><img src="https://img.icons8.com/ios-glyphs/20/00ff00/user.png"/> <a href="about.html">About</a></h3>
-        <p>Background, process & what drives my finance why.</p>
-      </div>
-
-      <div class="card">
-        <h3><img src="https://img.icons8.com/ios-filled/20/00ff00/linkedin.png"/> 
-        <a href="https://www.linkedin.com/in/vnktsh/" target="_blank">LinkedIn</a></h3>
-        <p>Follow my professional journey and connect.</p>
-      </div>
-
-      <div class="card">
-        <h3><img src="https://img.icons8.com/ios-filled/20/00ff00/new-post.png"/> 
-        <a href="mailto:z5612967@ad.unsw.edu.au">Contact</a></h3>
-        <p>Drop me a message — let’s talk finance, deals or collabs.</p>
-      </div>
-
-    </div>
+  <!-- Section Cards -->
+  <main class="card-container">
+    <a href="models.html" class="card">
+      <div class="icon">🧮</div>
+      <h2>Models</h2>
+      <p>Valuation & financial models — from DCF to LBO.</p>
+    </a>
+    <a href="stock-pitches.html" class="card">
+      <div class="icon">📈</div>
+      <h2>Pitches</h2>
+      <p>Data-driven stock recommendations with asymmetric upside.</p>
+    </a>
+    <a href="blog.html" class="card">
+      <div class="icon">🧠</div>
+      <h2>Blog</h2>
+      <p>Macro insights, market logic & finance commentary.</p>
+    </a>
+    <a href="about.html" class="card">
+      <div class="icon">👤</div>
+      <h2>About</h2>
+      <p>whoami(): finance built through code & conviction.</p>
+    </a>
+    <a href="mailto:z5612967@ad.unsw.edu.au" class="card">
+      <div class="icon">📩</div>
+      <h2>Mail</h2>
+      <p>Reach out via email — let’s talk finance.</p>
+    </a>
+    <a href="https://www.linkedin.com/in/vnktsh/" class="card" target="_blank">
+      <div class="icon">🔗</div>
+      <h2>LinkedIn</h2>
+      <p>Connect and view professional profile.</p>
+    </a>
   </main>
 
+  <!-- Footer -->
   <footer>
-    ven.finance — 2025
+    <p>ven.finance — 2025</p>
   </footer>
 
-  <script src="assets/js/matrix.js"></script>
+  <!-- Matrix Rain & Loader Scripts -->
+  <script src="assets/matrix.js"></script>
+  <script>
+    // Loader script for every load
+    const pct = document.getElementById('loading-percentage');
+    const loader = document.getElementById('loading-screen');
+    let count = 0;
+
+    function step() {
+      count++;
+      pct.textContent = count + '%';
+      if (count < 100) {
+        setTimeout(step, 30);
+      } else {
+        loader.style.display = 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', step);
+  </script>
 </body>
 </html>
