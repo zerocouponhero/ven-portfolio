@@ -34,18 +34,6 @@ h1 {
   margin-bottom: 1rem;
 }
 
-h2 {
-  font-size: 1.8rem;
-  margin-top: 2rem;
-  color: #8f8;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: .4rem;
-  color: #fffa72;
-}
-
 .section {
   border-bottom: 1px solid #333;
   margin-bottom: 2rem;
@@ -62,40 +50,6 @@ h3 {
 }
 .resume-button:hover {
   background-color: #82d1ff;
-}
-
-/* Terminal styling */
-.terminal-container {
-  background: #111;
-  border: 1px solid #555;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-family: Menlo, monospace;
-  font-size: 0.9rem;
-  color: #eee;
-}
-#terminal-output {
-  min-height: 4rem;
-  white-space: pre-wrap;
-}
-.terminal-input {
-  display: flex;
-  align-items: center;
-  margin-top: 0.5rem;
-}
-.prompt {
-  color: #4af;
-  margin-right: 0.5rem;
-}
-#terminal-cmd {
-  flex: 1;
-  background: transparent;
-  border: none;
-  color: #eee;
-  outline: none;
-}
-#terminal-cmd::placeholder {
-  color: #888;
 }
 
 footer {
