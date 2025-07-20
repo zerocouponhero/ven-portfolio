@@ -1,14 +1,16 @@
 /* matrix.css */
-body, html {
-  margin: 0; padding: 0;
-  background: #000;
-  color: #00ff00;
-  font-family: 'Courier New', Courier, monospace;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: black;
+  color: #00FF00;
+  font-family: 'Courier New', monospace;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-canvas#matrix-canvas {
-  position: fixed;
-  top: 0; left: 0;
+#matrix-canvas {
+  position: fixed; top:0; left:0;
   width: 100%; height: 100%;
   z-index: -1;
 }
@@ -16,61 +18,78 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: rgba(0,0,0,0.8);
-  border-bottom: 1px solid #00ff00;
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid #00FF00;
+  flex-wrap: wrap;
 }
-header h1 a {
-  color: #00ff00;
-  text-decoration: none;
-  font-size: 1.4rem;
+header .logo a {
+  color: #00FF00; text-decoration: none;
+  font-size: 1.3rem; font-weight: bold;
   text-transform: lowercase;
 }
-nav ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-nav li + li { margin-left: 1rem; }
-nav a {
-  color: #00ff00;
-  text-decoration: none;
-  font-size: 1rem;
+header nav a {
+  margin-left: 1rem;
+  color: #00FF00; text-decoration: none;
   position: relative;
-  transition: color 0.2s;
 }
-nav a:hover::after {
+header nav a:hover::after {
   content: '';
-  position: absolute;
+  position: absolute; bottom: -3px; left: 0;
   width: 100%; height: 2px;
-  background: #00ff00;
-  bottom: -3px; left: 0;
+  background: #00FF00;
 }
 main {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+.section-title {
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
-.content-box {
-  border: 1px solid #00ff00;
+.card, .content-container {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid #00FF00;
   padding: 1.5rem;
-  margin-top: 2rem;
-  text-align: left;
+  color: #00FF00;
 }
-.content-box p {
-  margin: 0.5rem 0;
+.card {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.card h2 { font-size: 1.5rem; }
+.card p { font-size: 0.95rem; flex: 1; text-align: center; }
+.card a {
+  color: #00FF00;
+  text-decoration: none;
+  font-weight: bold;
+}
+.card a:hover { text-decoration: underline; }
+.content-container {
+  margin: auto;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 footer {
   text-align: center;
   padding: 1rem;
-  border-top: 1px solid #00ff00;
-  margin-top: 3rem;
+  border-top: 1px solid #00FF00;
+  font-size: 0.85rem;
 }
-@media (max-width: 600px) {
-  header { flex-direction: column; }
-  nav ul { flex-direction: column; }
-  nav li + li { margin-left: 0; margin-top: 0.5rem; }
-  .content-box { margin-top: 1rem; }
+@media (max-width: 768px) {
+  header nav {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .card { width: 90%; margin-bottom: 1rem; }
 }
