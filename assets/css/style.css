@@ -1,88 +1,56 @@
-/* Base Reset */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body Theme */
-body {
-  background-color: #000;
+  background: #010101;
   color: #33ff33;
   font-family: 'Press Start 2P', monospace;
-  line-height: 1.6;
-  padding: 2rem;
 }
-
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #33ff33;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  background: #111;
+  padding: 10px 20px;
 }
-.logo {
-  font-size: 1rem;
-  color: #9933ff;
+.brand {
+  font-size: 1.2em;
+}
+.navbar a {
+  color: #33ff33;
+  margin-left: 15px;
   text-decoration: none;
 }
-.nav-links a {
-  color: #00ffff;
-  margin-left: 1rem;
-  text-decoration: none;
-}
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Content Section */
-.content {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-.content h1 {
-  color: #fff;
-  margin-bottom: 1.5rem;
-}
-.content p {
-  margin-bottom: 2rem;
-  font-size: 0.8rem;
-}
-
-/* Resume Button */
-.download-btn {
-  display: inline-block;
-  background: #0033cc;
-  color: #fff;
-  padding: 0.8rem 1.2rem;
-  text-decoration: none;
-  font-size: 0.75rem;
+.navbar .resume-btn {
+  background: #33ff33;
+  color: #010101;
+  padding: 4px 8px;
   border-radius: 4px;
 }
-.download-btn:hover {
-  background: #0044ff;
-}
-
-/* Footer */
-footer {
-  margin-top: 4rem;
+main {
   text-align: center;
-  color: #666;
-  font-size: 0.65rem;
+  padding: 80px 20px;
 }
-
-/* Responsive Tweak */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .nav-links a {
-    margin: 0.4rem 0 0;
-    display: block;
-  }
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  background: #33ff33;
+  color: #010101;
+  padding: 12px 24px;
+  border: none;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.button:hover {
+  background: #2ecc71;
+}
+footer {
+  text-align: center;
+  margin: 40px 0;
+  color: #555;
 }
