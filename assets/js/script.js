@@ -1,6 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('main h1').forEach(h1 => {
-    const text = h1.textContent;
-    h1.innerHTML = text + '<span class="cursor"></span>';
-  });
+// Optional: subtle hover shake for buttons
+document.querySelectorAll('button').forEach(btn => {
+  btn.addEventListener('mouseover', () => btn.classList.add('hover'));
+  btn.addEventListener('mouseout', () => btn.classList.remove('hover'));
 });
