@@ -1,149 +1,46 @@
-/* MATRIX BACKGROUND */
+/* Add better left/right padding and max-width for larger screens */
 body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  font-family: 'Courier New', Courier, monospace;
-  color: #00ff00;
-  overflow-x: hidden;
+  padding: 0 2rem;
 }
 
-canvas#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-/* NAVIGATION BAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: transparent;
-  color: #00ff00;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding-left: 0;
-  flex-wrap: wrap;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #00ff00;
-  font-weight: bold;
-  transition: color 0.2s ease;
-}
-
-.nav-links li a:hover {
-  color: #88ff88;
-}
-
-.resume-btn {
-  color: #00ff00;
-  font-weight: bold;
-}
-
-/* TAGLINE */
-.tagline {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-top: 2rem;
-  color: #00ff00;
-}
-
-/* CARD CONTAINER */
+/* Adjust card-container responsive spacing */
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding: 2rem;
-  margin-bottom: 4rem;
 }
 
-.card {
-  border: 1px solid #00ff00;
-  border-radius: 8px;
+/* About/p content box spacing */
+.content-box {
+  margin: 2rem auto;
+  max-width: 800px;
   padding: 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  color: #00ff00;
-  transition: 0.2s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #00ff00;
+  background: rgba(0,0,0,0.5);
 }
 
-.card:hover {
-  background-color: rgba(0, 255, 0, 0.1);
-  transform: scale(1.03);
+/* Headings */
+h1, h2 {
+  margin-left: 1rem;
 }
 
-.card .icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.card h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  color: #88ff88;
-}
-
-.card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-/* FOOTER */
+/* Footer spacing */
 footer {
-  text-align: center;
-  padding: 1rem;
-  color: #00ff00;
-  font-size: 0.8rem;
+  padding: 2rem 1rem;
 }
 
-/* MOBILE RESPONSIVENESS */
-@media screen and (max-width: 480px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+/* Desktop-specific tweaks */
+@media screen and (min-width: 1024px) {
+  .card-container {
+    padding: 3rem 4rem;
+    gap: 3rem;
   }
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  .nav-links li {
-    margin-bottom: 0.5rem;
+  .content-box {
+    margin: 3rem auto;
+    padding: 2rem;
   }
 
   .tagline {
-    font-size: 1.3rem;
-    padding: 1rem;
-  }
-
-  .card-container {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .card h2 {
-    font-size: 1.1rem;
-  }
-
-  .card p {
-    font-size: 0.9rem;
+    margin-top: 3rem;
   }
 }
