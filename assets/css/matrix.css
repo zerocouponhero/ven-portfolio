@@ -1,8 +1,10 @@
+/* MATRIX BACKGROUND */
 body {
-  background: black;
-  color: #00ff00;
-  font-family: 'Courier New', Courier, monospace;
   margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: 'Courier New', Courier, monospace;
+  color: #00ff00;
   overflow-x: hidden;
 }
 
@@ -11,142 +13,137 @@ canvas#matrix {
   top: 0;
   left: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
 }
 
+/* NAVIGATION BAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.85);
-  border-bottom: 1px solid #00ff00;
+  background: transparent;
+  color: #00ff00;
   flex-wrap: wrap;
 }
 
 .logo {
-  color: #00ff00;
-  font-size: 1.2rem;
   font-weight: bold;
-  text-transform: lowercase;
+  font-size: 1.5rem;
 }
 
 .nav-links {
-  display: flex;
-  gap: 1.25rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  gap: 1rem;
+  padding-left: 0;
+  flex-wrap: wrap;
 }
 
-.nav-links a {
-  color: #00ff00;
+.nav-links li a {
   text-decoration: none;
-  position: relative;
+  color: #00ff00;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: -2px;
-  left: 0;
-  background-color: #00ff00;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+.nav-links li a:hover {
+  color: #88ff88;
 }
 
-.nav-links a:hover::after {
-  transform: scaleX(1);
+.resume-btn {
+  color: #00ff00;
+  font-weight: bold;
 }
 
+/* TAGLINE */
 .tagline {
   text-align: center;
-  font-size: 1.5rem;
-  margin: 2rem 0 1rem;
+  font-size: 1.8rem;
+  margin-top: 2rem;
   color: #00ff00;
 }
 
+/* CARD CONTAINER */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-  max-width: 1000px;
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 4rem;
 }
 
 .card {
-  background: rgba(0, 255, 0, 0.05);
   border: 1px solid #00ff00;
+  border-radius: 8px;
   padding: 1.5rem;
-  flex: 1 1 250px;
-  min-width: 220px;
-  max-width: 300px;
   text-align: center;
   text-decoration: none;
   color: #00ff00;
-  transition: background 0.3s;
+  transition: 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
-  background: rgba(0, 255, 0, 0.1);
+  background-color: rgba(0, 255, 0, 0.1);
+  transform: scale(1.03);
 }
 
-.icon {
-  font-size: 1.8rem;
+.card .icon {
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1.25rem;
-  font-size: 0.85rem;
-  color: #00ff00;
-  border-top: 1px solid #00ff00;
-  margin-top: 3rem;
+.card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #88ff88;
 }
 
-/* -------- MOBILE OPTIMIZATION -------- */
-@media (max-width: 768px) {
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #00ff00;
+  font-size: 0.8rem;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 480px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    width: 100%;
     margin-top: 0.5rem;
   }
 
-  .nav-links a {
-    font-size: 0.95rem;
+  .nav-links li {
+    margin-bottom: 0.5rem;
   }
 
   .tagline {
     font-size: 1.3rem;
-    margin: 1.5rem 0;
+    padding: 1rem;
   }
 
   .card-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
+    padding: 1rem;
+    gap: 1rem;
   }
 
-  .card {
-    width: 100% !important;
-    max-width: 400px;
-    margin: 0 auto;
+  .card h2 {
+    font-size: 1.1rem;
   }
 
-  footer {
-    font-size: 0.8rem;
-    padding: 1rem 0;
+  .card p {
+    font-size: 0.9rem;
   }
 }
