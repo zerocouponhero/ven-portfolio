@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   const progressBar = document.getElementById("progress-bar");
   const progressText = document.getElementById("progress-text");
   const loader = document.getElementById("loader");
@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let percent = 0;
   const interval = setInterval(() => {
-    percent += Math.floor(Math.random() * 10) + 5;
+    percent += Math.floor(Math.random() * 15) + 5;
     if (percent >= 100) percent = 100;
+
     progressBar.style.width = percent + "%";
     progressText.textContent = `Loading... ${percent}%`;
 
@@ -18,5 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
         main.classList.remove("hidden");
       }, 300);
     }
-  }, 150);
+  }, 200);
 });
