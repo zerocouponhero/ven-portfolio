@@ -2,45 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | ven.finance</title>
-  <meta name="description" content="Ven's finance portfolio: models, pitches, blog—analytical finance meets clarity." />
-  <meta property="og:title" content="ven.finance Portfolio" />
-  <meta property="og:description" content="Home page of Ven's finance portfolio." />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ven.finance</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Loader Screen -->
+  <!-- Loader -->
   <div id="loader">
-    <div id="loader-bar"><div id="loader-progress"></div></div>
-    <div id="loader-text">Loading... 0%</div>
+    <div id="progress-bar"></div>
+    <div id="progress-text">Loading... 0%</div>
   </div>
 
-  <!-- Main Content -->
-  <div class="container" id="main-content" style="display:none;">
+  <!-- Main content (hidden until loader completes) -->
+  <div id="main" class="hidden">
     <nav>
-      <div><a href="index.html">ven.finance</a></div>
-      <div>
+      <a href="index.html" class="logo">ven.finance</a>
+      <div class="menu">
         <a href="about.html">about</a>
         <a href="models.html">models</a>
         <a href="stock-pitches.html">pitches</a>
         <a href="blog.html">blog</a>
-        <a href="assets/resume/Ven-Resume.pdf" download>📎 resume</a>
+        <a href="assets/resume/Ven-Resume.pdf" download>resume</a>
       </div>
     </nav>
 
-    <h1 class="page-title">
-      <span># Welcome</span>
-      <a class="resume-button" href="assets/resume/Ven-Resume.pdf" download>📥 Download Resume</a>
-    </h1>
-
-    <div class="section">
-      <p>This is Ven’s digital finance portfolio: valuation models, stock pitches, and market insights.</p>
+    <div class="container">
+      <div class="page-title">
+        <h1># Welcome</h1>
+        <a class="resume-button" href="assets/resume/Ven-Resume.pdf" download>
+          🧾 Download Resume
+        </a>
+      </div>
+      <div class="section">
+        <p>This is Ven’s digital finance portfolio: valuation models, stock pitches, and market insights.</p>
+      </div>
+      <footer>ven.finance — 2025</footer>
     </div>
-
-    <footer>ven.finance — 2025</footer>
   </div>
 
-  <script src="assets/js/matrix.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
