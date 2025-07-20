@@ -1,20 +1,22 @@
-// matrix.js — loader + page reveal
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBar = document.getElementById("progress-bar");
+  const progressText = document.getElementById("progress-text");
+  const loader = document.getElementById("loader");
+  const main = document.getElementById("main");
 
-let progress = 0;
-const loaderBar = document.getElementById('loader-progress');
-const loaderText = document.getElementById('loader-text');
-const loader = document.getElementById('loader');
-const main = document.getElementById('main-content');
+  let percent = 0;
+  const interval = setInterval(() => {
+    percent += Math.floor(Math.random() * 10) + 5;
+    if (percent >= 100) percent = 100;
+    progressBar.style.width = percent + "%";
+    progressText.textContent = `Loading... ${percent}%`;
 
-const interval = setInterval(() => {
-  if (progress >= 100) {
-    clearInterval(interval);
-    loader.style.display = 'none';
-    main.style.display = 'block';
-  } else {
-    progress += Math.random() * 12;
-    if (progress > 100) progress = 100;
-    loaderBar.style.width = `${progress}%`;
-    loaderText.textContent = `Loading... ${Math.floor(progress)}%`;
-  }
-}, 80);
+    if (percent === 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        loader.style.display = "none";
+        main.classList.remove("hidden");
+      }, 300);
+    }
+  }, 150);
+});
