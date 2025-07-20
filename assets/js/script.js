@@ -1,9 +1,6 @@
-// Blinking cursor effect for main heading
-const h1 = document.querySelector('main h1');
-let showCursor = true;
-setInterval(() => {
-  h1.innerText = showCursor
-    ? '# Welcome _'
-    : '# Welcome';
-  showCursor = !showCursor;
-}, 600);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('main h1').forEach(h1 => {
+    const text = h1.textContent;
+    h1.innerHTML = text + '<span class="cursor"></span>';
+  });
+});
