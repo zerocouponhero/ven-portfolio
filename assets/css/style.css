@@ -1,5 +1,3 @@
-/* style.css */
-
 body {
   background: #0a0a0a;
   color: #e0e0e0;
@@ -26,7 +24,6 @@ nav a {
   margin-left: 1.2rem;
   text-decoration: none;
 }
-
 nav a:hover {
   text-decoration: underline;
 }
@@ -55,19 +52,6 @@ h3 {
   padding-bottom: 1rem;
 }
 
-.resume-preview {
-  width: 100%;
-  height: 600px;
-  border: 1px solid #333;
-}
-
-footer {
-  margin-top: 4rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #777;
-}
-
 .resume-button {
   background-color: #4af;
   color: #000;
@@ -75,8 +59,48 @@ footer {
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: 4px;
-  margin-left: 1rem;
 }
 .resume-button:hover {
   background-color: #82d1ff;
+}
+
+/* Terminal styling */
+.terminal-container {
+  background: #111;
+  border: 1px solid #555;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-family: Menlo, monospace;
+  font-size: 0.9rem;
+  color: #eee;
+}
+#terminal-output {
+  min-height: 4rem;
+  white-space: pre-wrap;
+}
+.terminal-input {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.prompt {
+  color: #4af;
+  margin-right: 0.5rem;
+}
+#terminal-cmd {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #eee;
+  outline: none;
+}
+#terminal-cmd::placeholder {
+  color: #888;
+}
+
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
 }
