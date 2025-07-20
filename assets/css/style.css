@@ -1,85 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-:root {
-  --bg: #F5F0E6;
-  --panel: #FFFFFF;
-  --text: #333333;
-  --accent: #0077CC;
-  --button-bg: #0077CC;
-  --button-hover: #005FA3;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Retro pixel vibe */
 body {
-  background: var(--bg);
-  font-family: 'Press Start 2P', monospace;
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  background: #111;
+  color: #eee;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-nav {
-  background: var(--panel);
+.nav {
+  display: flex;
+  align-items: center;
   padding: 1rem;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
 }
 
-nav a {
-  color: var(--accent);
+.nav a {
+  margin-right: 1.5rem;
+  color: #69f;
   text-decoration: none;
-  font-size: .9rem;
-  transition: color .2s;
 }
 
-nav a:hover {
-  color: var(--button-bg);
-}
-
-main {
-  flex: 1;
-  padding: 2rem;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.panel {
-  background: var(--panel);
-  padding: 2rem;
-  border: 2px solid var(--accent);
+.nav .resume {
+  margin-left: auto;
+  background: #228;
+  padding: 0.3rem 0.6rem;
   border-radius: 4px;
-  max-width: 800px;
-  margin: 2rem auto;
 }
 
-button.download-btn {
-  margin-top: 1rem;
-  background: var(--button-bg);
+.nav .resume:hover {
+  background: #44b;
+}
+
+.centered {
+  max-width: 600px;
+  margin: 8rem auto 0;
+  text-align: left;
+}
+
+.centered h1 {
   color: #fff;
-  border: none;
-  padding: .8rem 1.6rem;
-  font-size: .8rem;
-  cursor: pointer;
-  transition: background .2s;
+  font-size: 2rem;
 }
 
-button.download-btn:hover {
-  background: var(--button-hover);
+.centered p {
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #69f;
+  color: #111;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #8bf;
+}
+
+.separator {
+  border-top: 1px solid #555;
+  margin: 2rem 0;
 }
 
 footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: .8rem;
-  background: var(--panel);
+  font-size: 0.9rem;
+  color: #588;
 }
