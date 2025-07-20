@@ -1,107 +1,88 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Theme */
 body {
-  background: #000;
-  color: #ccc;
-  font-family: 'Courier New', monospace;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #000;
+  color: #33ff33;
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.6;
+  padding: 2rem;
 }
 
-/* Loader styles */
-#loader {
-  text-align: center;
-}
-#progress-bar {
-  width: 0%;
-  max-width: 400px;
-  height: 8px;
-  background: #0f0;
-  margin: 1.5rem auto;
-  border: 1px solid #0f0;
-  transition: width 0.2s ease;
-}
-#progress-text {
-  color: #0f0;
-  font-family: monospace;
-  margin-bottom: 1rem;
-}
-
-/* Hide main initially */
-.hidden { display: none; }
-
-/* Main container */
-.container {
-  max-width: 800px;
-  width: 90%;
-  padding: 2rem 1rem;
-}
-
-/* Navigation */
-nav {
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #33ff33;
+  padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
-nav .logo {
-  color: #40f;
+.logo {
+  font-size: 1rem;
+  color: #9933ff;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
 }
-nav .menu a {
-  color: #0f0;
+.nav-links a {
+  color: #00ffff;
   margin-left: 1rem;
   text-decoration: none;
 }
-nav .menu a:hover {
+.nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Title + button */
-.page-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Content Section */
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+.content h1 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.content p {
   margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+  font-size: 0.8rem;
 }
-.page-title h1 {
+
+/* Resume Button */
+.download-btn {
+  display: inline-block;
+  background: #0033cc;
   color: #fff;
-  font-size: 2rem;
-}
-.resume-button {
-  background: #0a0;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
+  padding: 0.8rem 1.2rem;
   text-decoration: none;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+.download-btn:hover {
+  background: #0044ff;
 }
 
-/* Section & footer */
-.section {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 3rem;
-}
+/* Footer */
 footer {
+  margin-top: 4rem;
   text-align: center;
-  font-size: 0.85rem;
   color: #666;
+  font-size: 0.65rem;
 }
 
-/* Responsive */
+/* Responsive Tweak */
 @media (max-width: 600px) {
-  .page-title {
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
+  .nav-links a {
+    margin: 0.4rem 0 0;
+    display: block;
   }
 }
